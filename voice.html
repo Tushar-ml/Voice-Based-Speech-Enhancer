@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Detection</title>
+    <link rel="stylesheet" href="voice.css">
+    <style>
+        button {
+            padding: 10px;
+            width: 10em;
+            height: 5em;
+            background-color: #1074e7;
+            color: #FFFFFF;
+            border: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+    
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Speech Detection </h1>
+    
+    <div class="words" contenteditable>
+    </div>
+    <div style="text-align: center">
+    <button type='button' onclick="runSpeechRecognition()">
+        <h2>Start</h2>
+    </button>
+    <button type='button' onclick="stopSpeechRecognition()">
+        <h2>Stop</h2>
+    </button></div>
+</body>
+<script src='voice.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/reymon359/web-experiments/Social%20Signature/socialsignature.min.js"
+    crossorigin="anonymous"></script>
+</html>
+
