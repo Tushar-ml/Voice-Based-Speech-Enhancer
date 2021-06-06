@@ -24,7 +24,6 @@ function runSpeechRecognition(){
             .map(result => result.transcript)
             .join('');
 
-        // const poopScript = transcript.replace(/poop|poo|shit|dump/gi, '💩');
         p.textContent = transcript;
 
         if (e.results[0].isFinal) {
