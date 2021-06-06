@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client App</title>
+    
+</head>
+<body>
+    <input type='text' id='chat' value=''>
+    <input type='submit' onclick='sendMessage()' value='submit'>
+</body>
+<script>
+    
+    const url = 'ws://localhost:8080'
+    const connection = new WebSocket(url)
+    var p = document.getElementById('chat');
+    function sendMessage(){
+        
+        connection.send(p.value);
+        p.value = '';
+
+    }
+
+
+    connection.onerror = (error) => {
+        console.log(`WebSocket error: ${error}`)
+    }
+
+    connection.onmessage = (e) => {
+        console.log(e.data)
+    }
+</script>
+    
+</script>
+</html>
