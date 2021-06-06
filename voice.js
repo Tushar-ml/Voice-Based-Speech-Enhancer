@@ -25,11 +25,16 @@ function runSpeechRecognition(){
             .join('');
 
         p.textContent = transcript;
-
+        var res = transcript.split(" ");
+        var res = res.join(" ");
+        connection.send(res);
+        connection.onmessage = function(e) {
+            console.log("Received: '" + e.data + "'");
+        };
         if (e.results[0].isFinal) {
             p.textContent = p.textContent + '\n';
            
-            connection.send(p.textContent);
+            
             
             
             words.appendChild(p);
@@ -44,5 +49,5 @@ function runSpeechRecognition(){
 function stopSpeechRecognition(){
     
     recognition.stop();
-    connection.send(p.textContent);
+    
 }
